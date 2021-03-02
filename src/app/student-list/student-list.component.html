@@ -1,0 +1,29 @@
+
+    
+      <h2 style="color: #245468;">Student Data</h2>
+  
+    
+      <table class="table table-dark table-hover">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Email</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let student of students | async">
+            <td>{{student.name}}</td>
+            <td>{{student.address}}</td>
+            <td>{{student.email}}</td>
+            <td>
+                <button (click)="studentDetails(student.id)" class="btn btn-success" style="margin-left: 10px">Details</button>
+                <button (click)="updateStudent(student.id)" class="btn btn-primary" style="margin-left: 10px">Update</button>
+                <button (click)="deleteStudent(student.id)" class="btn btn-danger" style="margin-left: 10px">Delete</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    
+ 
